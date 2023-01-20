@@ -8,20 +8,20 @@
   </head>
   <body>
     <div class="container">
-      {% for chunk_books in books %}
+      {% for books_chunk in books %}
         <div class="row">
-          {% for book in chunk_books %}
+          {% for book in books_chunk %}
             <div class="col">
               <div class="card mb-3" style="max-width: 540px;">
                 <div class="row no-gutters">
                   <div class="col-md-4">
-                    <img src="{{ book.image_url|urlencode }}" class="card-img" alt="обложка книги {{ book.title }}">
+                    <img src="../{{ book.image_url|urlencode }}" class="card-img" alt="обложка книги {{ book.title }}">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title">{{ book.title }}</h5>
                       <h6 class="card-subtitle">{{ book.author.split()[0] }}</h6>
-                      <p class="card-text"><a href="{{ book.book_url|urlencode }}">Читать</a></p>
+                      <p class="card-text"><a href="../{{ book.book_url|urlencode }}">Читать</a></p>
                       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </div>
                   </div>
