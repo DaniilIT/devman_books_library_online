@@ -7,6 +7,8 @@ from math import ceil
 
 
 def on_reload():
+    """Функция рендерит html страницы с данными из books.json
+    """
     env = Environment(
         loader=FileSystemLoader('.'),
         autoescape=select_autoescape(['html'])
@@ -28,12 +30,8 @@ def on_reload():
             file.write(rendered_page)
 
 
-def main():
-    on_reload()
+if __name__ == "__main__":
     server = Server()
+    on_reload()
     server.watch('template.html', on_reload)
     server.serve(root='.')
-
-
-if __name__ == "__main__":
-    main()
