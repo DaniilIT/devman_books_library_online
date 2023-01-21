@@ -37,6 +37,8 @@ pip install -r requirements.txt
 python render_website.py
 ```
 
+Вы также можете указать в переменной `--json_path` путь до файла *\*.json*, где хранится информация про книги.
+
 После этого локальный сервер будет доступен по адресу: http://127.0.0.1:5500/pages/index1.html
 
 
